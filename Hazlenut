@@ -1,0 +1,26 @@
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+import sys
+
+def show():
+    print(line.text())
+app = QApplication(sys.argv)
+win = QMainWindow()
+win.setGeometry(400,400,500,300)
+win.setWindowTitle("Hazlenut Browser")
+
+
+line = QtWidgets.QLineEdit(win)
+line.move(100,80)
+button = QtWidgets.QPushButton(win)
+button.clicked.connect(win.close)
+button.setText("Quit")
+button.resize(120,60)
+button.move(350,220)
+label = QLabel(win)
+label.setText("Project Hazlenut")
+label.adjustSize()
+label.move(100,100)
+
+win.show()
+sys.exit(app.exec_())
